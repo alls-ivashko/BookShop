@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Models;
+using Domain.Models;
 
-namespace BusinessLogic.Interfaces
+namespace Domain.Interfaces
 {
     public interface IUserService
     {

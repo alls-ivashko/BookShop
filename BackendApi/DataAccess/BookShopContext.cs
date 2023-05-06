@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace DataAccess.Models
+namespace DataAccess
 {
     public partial class BookShopContext : DbContext
     {
@@ -16,7 +17,7 @@ namespace DataAccess.Models
         {
         }
 
-        public virtual DbSet<Attribute> Attributes { get; set; } = null!;
+        public virtual DbSet<Domain.Models.Attribute> Attributes { get; set; } = null!;
         public virtual DbSet<Book> Books { get; set; } = null!;
         public virtual DbSet<BookProperty> BookProperties { get; set; } = null!;
         public virtual DbSet<Cart> Carts { get; set; } = null!;
@@ -28,7 +29,7 @@ namespace DataAccess.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Attribute>(entity =>
+            modelBuilder.Entity<Domain.Models.Attribute>(entity =>
             {
                 entity.HasKey(e => e.Name)
                     .HasName("PK__Attribut__737584F7B7F801E8");

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Models;
+using Domain.Models;
 
-namespace DataAccess.Interfaces
+namespace Domain.Interfaces
 {
     public interface IUserRepository : IRepositoryBase<Customer>
     {

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAccess.Models
+namespace Domain.Models
 {
-    public partial class CategoryAttribute
+    public partial class BookProperty
     {
-        public string Category { get; set; } = null!;
+        public int Isbn { get; set; }
         public string Attribute { get; set; } = null!;
+        public object Value { get; set; } = null!;
         public bool Deleted { get; set; }
 
         public virtual Attribute AttributeNavigation { get; set; } = null!;
-        public virtual Category CategoryNavigation { get; set; } = null!;
+        public virtual Book IsbnNavigation { get; set; } = null!;
     }
 }

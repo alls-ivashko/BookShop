@@ -1,8 +1,9 @@
-using BusinessLogic.Interfaces;
+using Domain.Interfaces;
 using BusinessLogic.Services;
-using DataAccess.Models;
+using DataAccess;
 using DataAccess.Wrapper;
 using Microsoft.EntityFrameworkCore;
+using Domain.Wrapper;
 
 namespace BackendApi
 {
@@ -14,7 +15,7 @@ namespace BackendApi
 
             builder.Services.AddDbContext<BookShopContext>(
                 optionsAction:options => options.UseSqlServer(
-                    connectionString:"Server=DESKTOP-QNNF9FJ; Database=BookShop;Trusted_Connection=true;"));
+                    connectionString:"Server=DESKTOP-QNNF9FJ; Database=BookShopNew;Trusted_Connection=true;"));
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();

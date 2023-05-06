@@ -10,3 +10,5 @@ C:\Users\User\BookShop\BackendApi\Domain\obj\Debug\net6.0\Domain.dll
 C:\Users\User\BookShop\BackendApi\Domain\obj\Debug\net6.0\refint\Domain.dll
 C:\Users\User\BookShop\BackendApi\Domain\obj\Debug\net6.0\Domain.pdb
 C:\Users\User\BookShop\BackendApi\Domain\obj\Debug\net6.0\ref\Domain.dll
+C:\Users\User\BookShop\BackendApi\Domain\bin\Debug\net6.0\Domain.runtimeconfig.json
+C:\Users\User\BookShop\BackendApi\Domain\obj\Debug\net6.0\Domain.genruntimeconfig.cache
