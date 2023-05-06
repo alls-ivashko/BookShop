@@ -10,3 +10,6 @@ C:\Users\User\BookShop\BackendApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.d
 C:\Users\User\BookShop\BackendApi\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
 C:\Users\User\BookShop\BackendApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
 C:\Users\User\BookShop\BackendApi\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\BookShop\BackendApi\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\User\BookShop\BackendApi\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\User\BookShop\BackendApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CopyComplete
