@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain.Interfaces;
 using Domain.Models;
+using BackendApi.Contracts;
+using Mapster;
 
 namespace BackendApi.Controllers
 {
@@ -24,13 +26,63 @@ namespace BackendApi.Controllers
         [HttpGet("{login}")]
         public async Task<IActionResult> GetByLogin(string login)
         {
-            return Ok(await _userService.GetByLogin(login));
+            var request = await _userService.GetByLogin(login);
+            var response = new GetUserResponse()
+            {
+                Login = request.Login,
+                Password = request.Password,
+                LastName = request.LastName,
+                FirstName = request.FirstName,
+                MiddleName = request.MiddleName,
+                PhoneNumber = request.PhoneNumber,
+                ZipCode = request.ZipCode,
+                Region = request.Region,
+                City = request.City,
+                Street = request.Street,
+                House = request.House,
+                Flat = request.Flat,
+                Age = request.Age,
+                Gender = request.Gender,
+                Deleted = request.Deleted,
+            };
+            return Ok(response);
         }
 
+        /// <summary>
+        /// Создание нового пользователя
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        /// POST /Todo
+        /// {
+        /// "login" : "A4Tech Bloody B188",
+        /// "password" : "!Pa$$word123@",
+        /// "firstname" : "Иван",
+        /// "lastname" : "Иванов",
+        /// "middlename" : "Иванович",
+        /// "phonenumber" : "+79876542323",
+        /// "zipcode" : "455000",
+        /// "region" : "Moscow",
+        /// "city" : "Moscow",
+        /// "street" : "lenina",
+        /// "house" : "23",
+        /// "flat" : "12",
+        /// "age" : "18",
+        /// "gender" : "true",
+        /// "deleted" : "false"
+        /// }
+        ///
+        /// </remarks>
+        /// <param name="user">Пользователь</param>
+        /// <returns></returns>
+        // POST api/<UsersController>
         [HttpPost]
-        public async Task<IActionResult> Add(Customer user)
+        public async Task<IActionResult> Add(CreateUserRequest request)
         {
-            await _userService.Create(user);
+            var userDto = request.Adapt<Customer>();
+            
+            await _userService.Create(userDto);
             return Ok();
         }
 
